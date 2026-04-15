@@ -17,14 +17,17 @@
   </script>
 
   <!-- vConsole の読み込みと初期化（スマホ実機でのログ確認用） -->
-  <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vconsole@3.15.1/dist/vconsole.min.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      if (typeof window.VConsole !== 'undefined') {
-        window.vConsole = new window.VConsole();
-      }
-    });
+    // 確実に初期化させるために即時実行
+    if (typeof window.VConsole !== 'undefined') {
+      window.vConsole = new window.VConsole();
+      console.log('vConsole initialized safely.');
+    }
   </script>
+
+  <!-- キャッシュ確認用 -->
+  <meta name="app-version" content="20260415_2355">
 
   <!-- プレミアムなデザインのためのGoogle Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
